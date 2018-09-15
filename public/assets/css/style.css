@@ -1,0 +1,26 @@
+div {
+    border: solid orange 1px;
+}
+
+body {
+        background-color:yellow;
+}
+
+.monster-div {
+    display: flex;
+    flex-direction: row;
+}
+.burger-container{
+    width: 49%;
+}
+.devoured-container{
+    width: 49%;
+}
+.burger-action{
+    flex-direction: row;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
