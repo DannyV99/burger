@@ -1,23 +1,29 @@
 {{!-- +++++++++++++++++++ HEADING/BUTTON HTML ++++++++++++++++++++ --}}
 
-<div class="container">
-  <img src="/Users/daniel/Desktop/burger/public/assets/img/burger.gif" alt="">
-</div>
-<h2 id="add">Add A Burger</h2>
-<div class="form-group">
-  <form method="POST" action="api/burgers" class="addOne">
-    <textarea id="textArea" type="text" name="burger_name" rows="1" cols="30"></textarea>
-    <button id="btnCreate" type="submit">Create!</button>
-  </form>
-</div>
 
+<div class="picture">
+  {{!-- <div class="title">
+    <h1>Burger Shack</h1>
+  </div> --}}
+  <img src="/assets/img/burger.gif" height="200px">
+</div>
+<u></u>
+<div class="top">
+  <h2 id="add">Add A Burger</h2>
+  <div class="form-group">
+    <form method="POST" action="api/burgers" class="addOne">
+      <textarea id="textArea" type="text" name="burger_name" rows="2" cols="20"></textarea>
+      <button id="btnCreate" type="submit">Create!</button>
+    </form>
+  </div>
+</div>
 {{!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --}}
 {{!-- ++++++++++++++++ ADDING A BURGER HTML ++++++++++++++++++++ --}}
 
 <div class="monster-div">
   <div class="burger-container">
 
-    <h2>New Burgers</h2>
+    <h2><u>New Burgers</u></h2>
     <ul>
       {{#each burgers}} {{#unless this.devoured}}
       <li>
@@ -28,7 +34,7 @@
             <input type="hidden" name="devoured" value="true">
             <button class="btnDevour" type="submit">Devour it</button>
           </form>
-          
+
         </div>
       </li>
       {{/unless}} {{/each}}
@@ -40,7 +46,7 @@
 
   <div class="devoured-container">
 
-    <h2>Burgers Devoured</h2>
+    <h2><u>Burgers Devoured</u></h2>
     <ul>
       {{#each burgers}} {{#if this.devoured}}
       <li>
