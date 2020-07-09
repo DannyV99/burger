@@ -1,40 +1,31 @@
 {{!-- +++++++++++++++++++ HEADING/BUTTON HTML ++++++++++++++++++++ --}}
 
 
-<div class="picture">
-  {{!-- <div class="title">
-    <h1>Burger Shack</h1>
-  </div> --}}
-  <img src="/assets/img/burger.gif" height="200px">
-</div>
-<u></u>
-<div class="top">
-  <h2 id="add">Add A Burger</h2>
-  <div class="form-group">
-    <form method="POST" action="api/burgers" class="addOne">
-      <textarea id="textArea" type="text" name="burger_name" rows="2" cols="20"></textarea>
-      <button id="btnCreate" type="submit">Create!</button>
-    </form>
-  </div>
-</div>
+
 {{!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --}}
 {{!-- ++++++++++++++++ ADDING A BURGER HTML ++++++++++++++++++++ --}}
 
 <div class="monster-div">
   <div class="burger-container">
 
-    <h2><u>New Burgers</u></h2>
+    <h2><u>New Movies</u></h2>
     <ul>
       {{#each burgers}} {{#unless this.devoured}}
+
       <li>
         <div class="burger-action">
-
-          <p class="burgerType">{{this.burger_name}}</p>
-          <form action="api/burgers/{{this.id}}?_method=PUT" method="POST" class="dev">
-            <input type="hidden" name="devoured" value="true">
-            <button class="btnDevour" type="submit">Devour it</button>
-          </form>
-
+          <div class="card" style="width: 18rem;">
+            <a href="#" class="btn btn-primary">
+              <img id="fuck" class="burgerType" src={{this.picture}} class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title">{{this.burger_name}}</h5>
+              <form action="api/burgers/{{this.id}}?_method=PUT" method="POST" class="dev">
+                <input type="hidden" name="devoured" value="true">
+                <button class="btnDevour" type="submit">Recommend it!</button>
+              </form>
+              <p class="card-text">{{this.description}}</p>
+            </div>
+          </div>
         </div>
       </li>
       {{/unless}} {{/each}}
@@ -46,11 +37,19 @@
 
   <div class="devoured-container">
 
-    <h2><u>Burgers Devoured</u></h2>
+    <h2><u>Recommended Movies</u></h2>
     <ul>
       {{#each burgers}} {{#if this.devoured}}
       <li>
-        <p class="burgerType">{{this.burger_name}}</p>
+
+        <div class="burger-action">
+          <div class="card" style="width: 18rem;">
+            <a href="#" class="btn btn-primary">
+              <img id="fuck" class="burgerType" src={{this.picture}} class="card-img-top" alt="..."></a>
+            <div class="card-body">
+            </div>
+          </div>
+
       </li>
       {{/if}} {{/each}}
     </ul>

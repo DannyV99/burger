@@ -10,6 +10,13 @@ body {
 
 }
 
+#fuck{
+
+  height: 300px;
+  width: 70%;
+
+}
+
 .monster-div {
     display: flex;
     flex-direction: row;
@@ -36,20 +43,20 @@ body {
     padding-right: 50px;
     padding-left: 50px;
 
-    
+
 }
 ul{
     list-style: none;
 }
 .top{
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
 }
 
 .form-group{
     display: flex;
-    align-items:center 
+    align-items:center
 }
 
 #textArea{
